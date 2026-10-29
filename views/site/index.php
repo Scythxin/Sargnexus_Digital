@@ -54,7 +54,7 @@ $this->params['fluid'] = true; // Full-width section styling
     </div>
 </section>
 
-<!-- 2. ABOUT SARGNEXUS DIGITAL SECTION -->
+<!-- 2. ABOUT SARGNEXUS DIGITAL  section SECTION -->
 <section id="about" class="about-section py-5 my-lg-4">
     <div class="container custom-nav-container">
         <div class="row align-items-center g-5">
