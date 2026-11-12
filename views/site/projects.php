@@ -277,18 +277,18 @@ $this->params['fluid'] = true;
 
         <!-- 4 Featured Project Cards Grid -->
         <div class="row g-4 justify-content-center">
-            <!-- Card 01: Food Campaign - ITC Welcom Bhubaneswar -->
+
+            <!-- Card 01: food.mp4 -->
             <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="featured-project-card">
                     <video class="featured-project-card-bg"
                         autoplay loop muted playsinline preload="metadata"
                         poster="<?= Yii::getAlias('@web/images/project-food-poster.jpg') ?>"
-                        aria-label="Food Campaign - ITC Welcom Bhubaneswar">
+                        aria-label="Food Campaign">
                         <source src="<?= Yii::getAlias('@web/videos/food.mp4') ?>" type="video/mp4">
                     </video>
                     <div class="featured-project-overlay"></div>
-                    
-                    <!-- Top Index -->
+
                     <div class="featured-project-top">
                         <span class="featured-project-num">01</span>
                         <button class="featured-project-audio-toggle" type="button" aria-label="Unmute video" aria-pressed="false">
@@ -296,11 +296,10 @@ $this->params['fluid'] = true;
                         </button>
                     </div>
 
-                    <!-- Bottom Content -->
                     <div class="featured-project-body">
                         <span class="project-tag-pill tag-digital-marketing">Digital Marketing</span>
                         <h3 class="featured-project-title">
-                            Food Campaign – ITC Welcom Bhubaneswar
+                            Food Campaign
                         </h3>
                         <p class="featured-project-desc">
                             Social media campaign, influencer collaboration and event coverage.
@@ -316,18 +315,17 @@ $this->params['fluid'] = true;
                 </div>
             </div>
 
-            <!-- Card 02: Ad Shoot for Epari Sadashiv Jewellers -->
+            <!-- Card 02: event.mp4 -->
             <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="featured-project-card">
-                   <video class="featured-project-card-bg"
+                    <video class="featured-project-card-bg"
                         autoplay loop muted playsinline preload="metadata"
-                        poster="<?= Yii::getAlias('@web/images/project-jewellery-poster.jpg') ?>"
-                        aria-label="Ad Shoot for Epari Sadashiv Jewellers">
+                        poster="<?= Yii::getAlias('@web/images/project-event-poster.jpg') ?>"
+                        aria-label="Event Coverage and Promotion">
                         <source src="<?= Yii::getAlias('@web/videos/event.mp4') ?>" type="video/mp4">
                     </video>
                     <div class="featured-project-overlay"></div>
 
-                    <!-- Top Index -->
                     <div class="featured-project-top">
                         <span class="featured-project-num">02</span>
                         <button class="featured-project-audio-toggle" type="button" aria-label="Unmute video" aria-pressed="false">
@@ -335,17 +333,16 @@ $this->params['fluid'] = true;
                         </button>
                     </div>
 
-                    <!-- Bottom Content -->
                     <div class="featured-project-body">
                         <span class="project-tag-pill tag-video-production">Video Production</span>
                         <h3 class="featured-project-title">
-                            Ad Shoot for Epari Sadashiv Jewellers
+                            Event Coverage &amp; Promotion
                         </h3>
                         <p class="featured-project-desc">
-                            Product video shoot, editing and promotional campaign.
+                            Live event shoot, highlight reels and promotional video editing.
                         </p>
                         <div class="featured-project-meta">
-                            <span>JEWELLERY ADS SHOOT</span>
+                            <span>EVENT SHOOT</span>
                             <span class="separator">•</span>
                             <span><?= date('Y') ?></span>
                         </div>
@@ -353,18 +350,17 @@ $this->params['fluid'] = true;
                 </div>
             </div>
 
-            <!-- Card 03: Furniture Ad - Gupta Distributor -->
+            <!-- Card 03: interior.mp4 -->
             <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="featured-project-card">
                     <video class="featured-project-card-bg"
                         autoplay loop muted playsinline preload="metadata"
                         poster="<?= Yii::getAlias('@web/images/project-interior-poster.jpg') ?>"
-                        aria-label="Interior Design Campaign - Modern Living">
+                        aria-label="Interior and Furniture Ad">
                         <source src="<?= Yii::getAlias('@web/videos/interior.mp4') ?>" type="video/mp4">
                     </video>
                     <div class="featured-project-overlay"></div>
 
-                    <!-- Top Index -->
                     <div class="featured-project-top">
                         <span class="featured-project-num">03</span>
                         <button class="featured-project-audio-toggle" type="button" aria-label="Unmute video" aria-pressed="false">
@@ -372,17 +368,18 @@ $this->params['fluid'] = true;
                         </button>
                     </div>
 
-                    <!-- Bottom Content -->
                     <div class="featured-project-body">
                         <span class="project-tag-pill tag-campaigns">Campaigns</span>
                         <h3 class="featured-project-title">
-                            Furniture Ad – Gupta Distributor
+                            Interior &amp; Furniture Ad
                         </h3>
                         <p class="featured-project-desc">
-                            Ad shoot and digital campaign for brand promotion.
+                            Showcase video of modern interiors with a digital campaign for brand promotion.
                         </p>
                         <div class="featured-project-meta">
                             <span>ADS</span>
+                            <span class="separator">•</span>
+                            <span>INTERIOR</span>
                             <span class="separator">•</span>
                             <span><?= date('Y') ?></span>
                         </div>
@@ -390,18 +387,17 @@ $this->params['fluid'] = true;
                 </div>
             </div>
 
-            <!-- Card 04: Business Website - Classic Stones -->
+            <!-- Card 04: college.mp4 -->
             <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="featured-project-card">
                     <video class="featured-project-card-bg"
                         autoplay loop muted playsinline preload="metadata"
-                        poster="<?= Yii::getAlias('@web/images/project-website-poster.jpg') ?>"
-                        aria-label="Business Website - Classic Stones">
+                        poster="<?= Yii::getAlias('@web/images/project-college-poster.jpg') ?>"
+                        aria-label="College Promotional Video">
                         <source src="<?= Yii::getAlias('@web/videos/college.mp4') ?>" type="video/mp4">
                     </video>
                     <div class="featured-project-overlay"></div>
 
-                    <!-- Top Index -->
                     <div class="featured-project-top">
                         <span class="featured-project-num">04</span>
                         <button class="featured-project-audio-toggle" type="button" aria-label="Unmute video" aria-pressed="false">
@@ -409,17 +405,16 @@ $this->params['fluid'] = true;
                         </button>
                     </div>
 
-                    <!-- Bottom Content -->
                     <div class="featured-project-body">
-                        <span class="project-tag-pill tag-web-dev">Web Development</span>
+                        <span class="project-tag-pill tag-campaigns">Education Marketing</span>
                         <h3 class="featured-project-title">
-                            Business Website – Classic Stones
+                            College Promotional Video
                         </h3>
                         <p class="featured-project-desc">
-                            Modern and responsive website development.
+                            Campus walkthrough, student life and admission promotion video.
                         </p>
                         <div class="featured-project-meta">
-                            <span>WEBSITE</span>
+                            <span>COLLEGE ADS</span>
                             <span class="separator">•</span>
                             <span><?= date('Y') ?></span>
                         </div>
