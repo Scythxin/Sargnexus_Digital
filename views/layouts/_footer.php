@@ -44,6 +44,7 @@ use yii\helpers\Url;
                 <h6 class="footer-heading mb-3 text-white fw-bold">Company</h6>
                 <ul class="list-unstyled footer-links small">
                     <li class="mb-2"><a href="<?= Url::to(['/site/index']) ?>">Home</a></li>
+                    <li class="mb-2"><a href="<?= Url::to(['/site/about']) ?>">About Us</a></li>
                     <li class="mb-2"><a href="<?= Url::to(['/site/services']) ?>">Services</a></li>
                     <li class="mb-2"><a href="<?= Url::to(['/site/projects']) ?>">Projects</a></li>
                     <li class="mb-2"><a href="<?= Url::to(['/site/quote']) ?>">Get a Quote</a></li>
@@ -53,18 +54,23 @@ use yii\helpers\Url;
             <!-- Contact Column -->
             <div class="col-lg-3 col-md-6">
                 <h6 class="footer-heading mb-3 text-white fw-bold">Contact</h6>
+                <p class="text-white-50 small mb-2 fw-semibold">SARGNEXUS PRIVATE LIMITED</p>
                 <ul class="list-unstyled footer-contact small text-secondary">
                     <li class="mb-2 d-flex align-items-center gap-2">
                         <i class="bi bi-envelope text-white-50"></i>
-                        <a href="mailto:digital@sargnexus.com" class="text-secondary text-decoration-none hover-light">digital@sargnexus.com</a>
+                        <a href="mailto:partners@sargnexus.digital" class="text-secondary text-decoration-none hover-light">partners@sargnexus.digital</a>
                     </li>
                     <li class="mb-2 d-flex align-items-center gap-2">
                         <i class="bi bi-telephone text-white-50"></i>
-                        <a href="tel:+918917237415" class="text-secondary text-decoration-none hover-light">+91 8917237415</a>
+                        <a href="tel:+918763585769" class="text-secondary text-decoration-none hover-light">+91 8763585769</a>
                     </li>
-                    <li class="mb-3 d-flex align-items-center gap-2">
-                        <i class="bi bi-geo-alt text-white-50"></i>
-                        <span>Bhubaneswar, India</span>
+                    <li class="mb-2 d-flex align-items-start gap-2">
+                        <i class="bi bi-geo-alt text-white-50 mt-1"></i>
+                        <span>Sreekhetra Vihar, Patrapada, Bhubaneswar, Odisha - 751019</span>
+                    </li>
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <i class="bi bi-globe text-white-50"></i>
+                        <a href="https://sargnexus.digital" target="_blank" rel="noopener" class="text-secondary text-decoration-none hover-light">sargnexus.digital</a>
                     </li>
                 </ul>
             </div>

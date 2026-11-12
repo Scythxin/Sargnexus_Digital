@@ -30,7 +30,7 @@ $this->params['fluid'] = true;
                     Our <span class="text-gradient-purple">Services</span>
                 </h1>
                 <p class="hero-subtitle mb-4 pe-lg-4">
-                    Simple digital solutions to help your business grow online.
+                    Simple digital solutions to help your business grow online. From your first social post to multi-channel advertising, we bring the right mix of content, visibility, and campaign execution.
                 </p>
                 <div>
                     <a href="<?= Url::to(['/site/quote']) ?>" class="btn btn-purple-gradient text-white fw-semibold px-4 py-3 rounded-pill shadow-sm">
@@ -77,7 +77,7 @@ $this->params['fluid'] = true;
                 <div class="service-overlay-card">
                     <img src="<?= Yii::getAlias('@web/images/service-influencer.jpg') ?>" alt="Influencer Marketing">
                     <div class="service-overlay-content">
-                        <h4 class="service-card-title">Digital Marketing Strategy</h4>
+                        <h4 class="service-card-title">Digital Marketing </h4>
                         <p class="service-card-desc"> We create digital strategies that help businesses reach more customers.</p>
                     </div>
                 </div>
@@ -127,16 +127,6 @@ $this->params['fluid'] = true;
                 </div>
             </div>
 
-            <!-- 07. PR Marketing -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-overlay-card">
-                    <img src="<?= Yii::getAlias('@web/images/service-pr.jpg') ?>" alt="PR Marketing">
-                    <div class="service-overlay-content">
-                        <h4 class="service-card-title">Meta Business Ad</h4>
-                        <p class="service-card-desc"> We run targeted Meta ads to help businesses reach the right audience and generate more leads.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -302,7 +292,99 @@ $this->params['fluid'] = true;
     </div>
 </section>
 
-<!-- 6. PREFER TO CONTACT US VIA EMAIL? STRIP -->
+<!-- 6. STANDALONE SERVICES (INDIVIDUAL SERVICES) -->
+<section id="standalone-services" class="standalone-services-section py-5 bg-light-subtle">
+    <div class="container custom-nav-container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-tag text-uppercase mb-2 d-inline-block">STANDALONE SERVICES</span>
+            <h2 class="section-title mb-2">
+                Individual <span class="text-purple">Services</span>
+            </h2>
+            <p class="section-subtitle mb-0">
+                Individual services can be selected without subscribing to a full monthly plan.
+            </p>
+        </div>
+
+        <?php
+        $standaloneServicesList = [
+            ['name' => 'Social Media Profile Setup & Branding', 'price' => '₹1,999', 'billing' => 'one-time', 'description' => 'Professional setup and branding for your social media presence.'],
+            ['name' => 'Social Media Creative Design', 'price' => '₹399', 'billing' => 'per creative', 'description' => 'Custom post designs created to match your brand and campaign goals.'],
+            ['name' => 'Short-Form Video Editing', 'price' => '₹799', 'billing' => 'per reel', 'description' => 'Edited, engaging short-form videos designed for reels and social campaigns.'],
+            ['name' => 'Google Business Profile Setup', 'price' => '₹2,499', 'billing' => 'one-time', 'description' => 'Create and optimize your local business profile for greater visibility.'],
+            ['name' => 'Google Business Profile Care', 'price' => '₹2,999', 'billing' => 'per month', 'description' => 'Routine updates, optimization and profile management to keep you visible.'],
+            ['name' => 'Meta Campaign Management', 'price' => '₹4,999', 'billing' => 'per month', 'description' => 'Strategy, setup, monitoring and optimization for Meta ad campaigns.'],
+            ['name' => 'Google Ads Campaign Management', 'price' => '₹5,999', 'billing' => 'per month', 'description' => 'Search and campaign management to generate leads and improve conversion.'],
+            ['name' => 'Local SEO Support', 'price' => '₹5,999', 'billing' => 'per month', 'description' => 'Keyword-focused optimization to strengthen local search visibility.'],
+            ['name' => 'Marketing Strategy Consultation', 'price' => '₹1,499', 'billing' => 'per session', 'description' => 'Expert guidance to plan your growth roadmap and digital priorities.'],
+        ];
+        ?>
+
+        <div class="row g-4">
+            <?php foreach ($standaloneServicesList as $serviceIndex => $service): ?>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?= ($serviceIndex + 1) * 80 ?>">
+                    <div class="standalone-service-card h-100 bg-white p-4 rounded-4 shadow-sm border">
+                        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+                            <span class="standalone-service-tag"><?= Html::encode(strtoupper($service['billing'])) ?></span>
+                            <span class="standalone-service-price fw-bold text-primary fs-5"><?= Html::encode($service['price']) ?></span>
+                        </div>
+                        <h4 class="standalone-service-name fs-6 fw-bold mb-2 text-dark"><?= Html::encode($service['name']) ?></h4>
+                        <p class="standalone-service-description small text-secondary mb-0"><?= Html::encode($service['description']) ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <p class="text-secondary small text-center mt-4 mb-0">
+            Prices are indicative and depend on scope, duration, creative complexity and service requirements.
+        </p>
+    </div>
+</section>
+
+<!-- 7. SERVICE GUIDELINES & DELIVERABLES -->
+<section id="service-guidelines" class="service-guidelines-section py-5 bg-white">
+    <div class="container custom-nav-container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-tag text-uppercase mb-2 d-inline-block">TRANSPARENT TERMS</span>
+            <h2 class="section-title mb-2">
+                Service Guidelines &amp; <span class="text-purple">Commercial Terms</span>
+            </h2>
+            <p class="section-subtitle mb-0">
+                Transparent deliverables and flexible commercial arrangements.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <?php
+            $servicesGuidelines = [
+                ['num' => '01', 'title' => 'Service activation', 'desc' => 'Work begins after onboarding and confirmation of the agreed payment terms.'],
+                ['num' => '02', 'title' => 'Media budget', 'desc' => 'Meta, Google, YouTube or other advertising platform spend is paid separately by the client.'],
+                ['num' => '03', 'title' => 'Creative reviews', 'desc' => 'Up to two reasonable revision rounds per approved creative or video deliverable.'],
+                ['num' => '04', 'title' => 'Monthly allocation', 'desc' => 'The committed deliverables apply to each monthly service cycle and do not automatically carry forward.'],
+                ['num' => '05', 'title' => 'Client inputs', 'desc' => 'Brand assets, product details, relevant permissions and content approvals should be provided on time.'],
+                ['num' => '06', 'title' => 'On-site shoots', 'desc' => 'Included shoots are valid within Bhubaneswar city limits only: Ignite 1, Spark 3, Momentum 5 and Velocity 7 shoots per month. Shoots outside Bhubaneswar may attract additional travel and production charges; locations, visit duration and any special production requirements are agreed in advance.'],
+                ['num' => '07', 'title' => 'Performance expectations', 'desc' => 'Campaigns are optimized for agreed objectives; specific sales, leads, rankings or revenue are not guaranteed.'],
+                ['num' => '08', 'title' => 'Scope changes', 'desc' => 'Extra creatives, shoots, platforms or other work outside the selected plan are quoted separately.'],
+                ['num' => '09', 'title' => 'Taxes and renewal', 'desc' => 'Applicable taxes, invoicing, billing dates and renewal terms will be specified in the client quotation.'],
+            ];
+            ?>
+            <?php foreach ($servicesGuidelines as $index => $g): ?>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?= ($index % 3 + 1) * 80 ?>">
+                    <div class="guideline-card h-100 p-4 rounded-4 border bg-light-subtle">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <span class="guideline-num fw-bold fs-5 text-primary"><?= Html::encode($g['num']) ?></span>
+                            <h5 class="fw-bold fs-6 mb-0 text-dark"><?= Html::encode($g['title']) ?></h5>
+                        </div>
+                        <p class="text-secondary small mb-0 lh-base">
+                            <?= Html::encode($g['desc']) ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- 8. CONTACT VIA WHATSAPP STRIP -->
 <section class="email-contact-strip py-4 my-4">
     <div class="container custom-nav-container">
         <div class="email-strip-card p-4 px-lg-5" data-aos="zoom-in" data-aos-duration="700">
@@ -313,13 +395,13 @@ $this->params['fluid'] = true;
                     </div>
                     <div>
                         <span class="email-strip-tag text-uppercase fw-bold d-block mb-1">HAVE A QUESTION?</span>
-                        <h4 class="fw-bold mb-1 fs-5 text-dark">Prefer to Contact Us via Whatsapp?</h4>
-                        <p class="text-secondary small mb-0">Drop us a message and we'll get back to you as soon as possible.</p>
+                        <h4 class="fw-bold mb-1 fs-5 text-dark">Prefer to Contact Us Directly?</h4>
+                        <p class="text-secondary small mb-0">Reach us on WhatsApp or email <a href="mailto:partners@sargnexus.digital" class="text-primary fw-semibold">partners@sargnexus.digital</a></p>
                     </div>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <a href="https://wa.me/918917237415" target="_blank" rel="noopener noreferrer" class="btn btn-purple-gradient text-white fw-semibold rounded-pill px-4 py-2">
-                        <i class="bi bi-whatsapp me-1"></i> Send us a message <i class="bi bi-arrow-right ms-1"></i>
+                    <a href="https://wa.me/918763585769" target="_blank" rel="noopener noreferrer" class="btn btn-purple-gradient text-white fw-semibold rounded-pill px-4 py-2">
+                        <i class="bi bi-whatsapp me-1"></i> Send WhatsApp message <i class="bi bi-arrow-right ms-1"></i>
                     </a>
                 </div>
             </div>

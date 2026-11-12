@@ -2,6 +2,8 @@
 
 /** @var yii\web\View $this */
 /** @var app\models\Quote $model */
+/** @var string[] $selectedServiceIds */
+/** @var string[] $selectedServiceLabels */
 
 use yii\bootstrap5\ActiveForm;
 use yii\helpers\Html;
@@ -68,6 +70,25 @@ $this->params['fluid'] = true;
                     </div>
                 </div>
 
+                <!-- Direct Contact Information -->
+                <div class="mt-4 p-3 bg-white rounded-3 shadow-sm border" data-aos="fade-up" data-aos-delay="350">
+                    <span class="text-uppercase fw-bold text-primary small d-block mb-2">Direct Contact</span>
+                    <div class="d-flex flex-column gap-2 small">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-envelope text-primary"></i>
+                            <a href="mailto:partners@sargnexus.digital" class="text-dark text-decoration-none fw-semibold">partners@sargnexus.digital</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-telephone text-primary"></i>
+                            <a href="tel:+918763585769" class="text-dark text-decoration-none fw-semibold">+91 8763585769</a>
+                        </div>
+                        <div class="d-flex align-items-start gap-2 text-secondary">
+                            <i class="bi bi-geo-alt text-primary mt-1"></i>
+                            <span>Sreekhetra Vihar, Patrapada, Bhubaneswar, Odisha - 751019</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Paper Plane Decorative Trail -->
                 <div class="paper-plane-decoration d-none d-lg-block mt-4 position-relative" data-aos="zoom-in" data-aos-delay="400">
                     <svg width="220" height="90" viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,6 +111,22 @@ $this->params['fluid'] = true;
                         'id' => 'quote-form',
                         'options' => ['class' => 'd-flex flex-column gap-3'],
                     ]); ?>
+
+                    <?php foreach ($selectedServiceIds as $serviceId): ?>
+                        <?= Html::hiddenInput('services[]', $serviceId) ?>
+                    <?php endforeach; ?>
+
+                    <?php if ($selectedServiceLabels): ?>
+                        <div class="p-3 bg-light rounded-3 border">
+                            <h3 class="small fw-bold text-dark mb-2">Your selected services</h3>
+                            <ul class="small text-secondary mb-0 ps-3">
+                                <?php foreach ($selectedServiceLabels as $serviceLabel): ?>
+                                    <li><?= Html::encode($serviceLabel) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <p class="small text-secondary mt-2 mb-0">These selections will be included with your quotation request.</p>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="form-group">
                         <label class="form-label fw-semibold small text-dark">Your Name <span class="text-danger">*</span></label>

@@ -162,17 +162,47 @@ class SiteController extends Controller
     public function actionQuote(): Response|string
     {
         $model = new Quote();
+        $serviceOptions = [
+            'content_volume' => 'Number of posts, reels and stories',
+            'production' => 'Photoshoots and product showcase videos',
+            'social_channels' => 'Facebook, Instagram and YouTube support',
+            'paid_ads' => 'Meta Ads and Google Ads management',
+            'local_seo' => 'Google Business Profile and local SEO',
+            'lead_reporting' => 'Lead-generation campaigns and reporting',
+        ];
+        $requestedServices = $this->request->isPost
+            ? $this->request->post('services', [])
+            : $this->request->get('services', []);
+        $selectedServiceIds = is_array($requestedServices)
+            ? array_values(array_intersect(array_keys($serviceOptions), array_unique(array_filter($requestedServices, 'is_string'))))
+            : [];
+        $selectedServiceLabels = array_map(
+            static fn(string $id): string => $serviceOptions[$id],
+            $selectedServiceIds,
+        );
 
-        if ($model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash(
-                'success',
-                'Thank you for requesting a quote! Your inquiry has been recorded and we will get back to you shortly.',
-            );
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($model->validate()) {
+                if ($selectedServiceLabels) {
+                    $model->message = rtrim($model->message) . "\n\nRequested custom plan services:\n- " . implode("\n- ", $selectedServiceLabels);
+                }
 
-            return $this->refresh();
+                if ($model->save()) {
+                    Yii::$app->session->setFlash(
+                        'success',
+                        'Thank you for requesting a quote! Your inquiry has been recorded and we will get back to you shortly.',
+                    );
+
+                    return $this->refresh();
+                }
+            }
         }
 
-        return $this->render('quote', ['model' => $model]);
+        return $this->render('quote', [
+            'model' => $model,
+            'selectedServiceIds' => $selectedServiceIds,
+            'selectedServiceLabels' => $selectedServiceLabels,
+        ]);
     }
 
     /**
